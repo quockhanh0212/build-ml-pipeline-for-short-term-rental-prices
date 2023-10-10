@@ -121,7 +121,6 @@ mlflow run . \
    -P steps=train_random_forest \
    -P hydra_options="modeling.max_tfidf_features=10,15,30 modeling.random_forest.max_features=0.1,0.33,0.5,0.75,1 -m"
 ```
-![hyper_parameters](/projects/reproducible_model_workflow/images/optimize_hyper_parameters.png)
 
 ### 7. Test model
 ```bash
@@ -157,6 +156,20 @@ test_data.py::test_row_count PASSED                               [100%]
 2023-10-09 10:03:24,892 Splitting trainval and test
 2023-10-09 10:03:24,965 Uploading trainval_data.csv dataset
 2023-10-09 10:03:32,192 Uploading test_data.csv dataset
+...
+2023-10-10 07:46:22,898 Minimum price: 10, Maximum price: 350
+2023-10-10 07:46:22,933 Preparing sklearn pipeline
+2023-10-10 07:46:22,934 Fitting
+2023-10-10 07:51:05,088 Computing and scoring r2 and MAE
+2023-10-10 07:51:05,295 Score: 0.5882303673226825
+2023-10-10 07:51:05,295 MAE: 30.982307847624178
+2023-10-10 07:51:05,296 Exporting model
+...
+2023-10-10 07:52:17,177 Downloading artifacts
+2023-10-10 07:52:22,051 Loading model and performing inference on test set
+2023-10-10 07:52:22,909 Scoring
+2023-10-10 07:52:23,036 Score: 0.6114952014557171
+2023-10-10 07:52:23,036 MAE: 31.071637411156576
 ```
 
 ## Public Wandb project
